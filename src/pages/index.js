@@ -22,7 +22,6 @@ export default function HomePage(props) {
     if (!isLoading) toggleIsLoading(true)
     const { username } = await Auth.currentAuthenticatedUser()
     const variables = {}
-    console.log({ displayAllTodos })
     if (!displayAllTodos) {
       variables.filter = {
         owner: {
