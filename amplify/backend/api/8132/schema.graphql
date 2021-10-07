@@ -1,0 +1,14 @@
+type Todo
+  @model
+  @searchable
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "owner" }
+      { allow: private, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  description: String
+  owner: String!
+}
